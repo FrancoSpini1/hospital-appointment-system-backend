@@ -39,4 +39,11 @@ public class IPacienteService implements PacienteService {
     public void deletePacienteById(Long id) {
         pr.deleteById(id);
     }
+
+    @Override
+    public List<Paciente> getPacientesPorNombre(String nombre) {
+        return pr.findPacienteByNombreCompleto(nombre);
+    }
+
+
 }

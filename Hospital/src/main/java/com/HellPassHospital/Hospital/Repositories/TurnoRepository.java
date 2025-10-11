@@ -11,4 +11,7 @@ import java.util.List;
 public interface TurnoRepository extends JpaRepository<Turno,Long> {
     @Query("SELECT t FROM Turno t WHERE t.paciente.id =:id")
     List<Turno> findByIdPaciente(long id);
+
+    @Query("SELECT t FROM Turno t WHERE t.paciente.id =:id AND t.medico.nombreCompleto LIKE '%' || :nombre || '%'")
+    List<Turno> findTurnosByNombreMedicoAndIdPaciente(String nombre,long id);
 }

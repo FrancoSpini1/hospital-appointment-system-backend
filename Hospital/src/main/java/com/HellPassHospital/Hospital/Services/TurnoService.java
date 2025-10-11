@@ -14,4 +14,6 @@ public interface TurnoService {
 
     public void deleteTurnoById(Long id);
     public List<Turno> getTurnosByIdPaciente(Long idPaciente);
+
+    List<Turno> getTurnosDeXMedicoByIdPaciente(String nombre, Long id);
 }

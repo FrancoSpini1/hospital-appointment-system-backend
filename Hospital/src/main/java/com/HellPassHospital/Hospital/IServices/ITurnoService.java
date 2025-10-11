@@ -65,4 +65,9 @@ public class ITurnoService implements TurnoService {
     public List<Turno> getTurnosByIdPaciente(Long idPaciente) {
         return tr.findByIdPaciente(idPaciente);
     }
+
+    @Override
+    public List<Turno> getTurnosDeXMedicoByIdPaciente(String nombre, Long id) {
+        return tr.findTurnosByNombreMedicoAndIdPaciente(nombre,id);
+    }
 }

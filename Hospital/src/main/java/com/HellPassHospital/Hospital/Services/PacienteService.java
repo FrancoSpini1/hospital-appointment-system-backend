@@ -10,4 +10,6 @@ public interface PacienteService {
     public void setPaciente(Paciente np);
     public void updatePaciente(Long id,Paciente np);
     public void deletePacienteById(Long id);
+
+    List<Paciente> getPacientesPorNombre(String nombre);
 }

@@ -39,4 +39,9 @@ public class IMedicoService implements MedicoService {
     public void deleteMedicoById(Long id) {
         mr.deleteById(id);
     }
+
+    @Override
+    public List<Medico> getMedicosPorNombre(String nombre) {
+        return mr.findMedicoByNombreCompleto(nombre);
+    }
 }

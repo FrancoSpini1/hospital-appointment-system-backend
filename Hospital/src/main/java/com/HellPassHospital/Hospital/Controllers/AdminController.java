@@ -49,6 +49,10 @@ public class AdminController {
         return ps.getPacientes();
     }
 
+    @GetMapping("obtenerPacientesPorNombre/{nombre}")
+    public List<Paciente> obtenerPacientesPorNombre(@PathVariable String nombre){
+        return ps.getPacientesPorNombre(nombre);
+    }
     @PutMapping("editarPaciente/{id}")
     public void updatePaciente(@RequestBody Paciente pn,Long id){
         ps.updatePaciente(id,pn);
@@ -62,26 +66,28 @@ public class AdminController {
     //CRUD medicos:
 
     @PostMapping("crearMedico")
-    public void setMedico(@RequestBody Medico nm){
-        ms.postMedico(nm);
-    }
-    @GetMapping("obtenerMedico/{id}")
-    public Medico getMedico(@PathVariable Long id){
-        return ms.getMedicoById(id);
-    }
-    @GetMapping("obtenerMedicos")
-    public List<Medico> getMedicos(){
-        return ms.getMedicos();
-    }
+    public void setMedico(@RequestBody Medico nm){ms.postMedico(nm);}
 
+    @GetMapping("obtenerMedico/{id}")
+    public Medico getMedico(@PathVariable Long id){return ms.getMedicoById(id);}
+
+    @GetMapping("obtenerMedicos")
+    public List<Medico> getMedicos(){return ms.getMedicos();}
+
+    @GetMapping("obtenerMedicosPorNombre/{nombre}")
+    public List<Medico> getMedicosPorNombre(@PathVariable String nombre){
+        return ms.getMedicosPorNombre(nombre);
+    }
     @PutMapping("editarMedico/{id}")
     public void updateMedico(@RequestBody Medico nm,@PathVariable Long id){
         ms.updateMedico(id,nm);
     }
+
     @DeleteMapping("borrarMedico/{id}")
     public void borrarMedico(@PathVariable Long id){
         ms.deleteMedicoById(id);
     }
+
 
     /*
     datasos

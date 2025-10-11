@@ -15,10 +15,10 @@ public class Turno {
     private Long id;
     private LocalDate fechaTurno;
     private LocalTime horaTurno;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="idPaciente",referencedColumnName = "id")
     private Paciente paciente;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="idMedico",referencedColumnName = "id")
     private Medico medico;
 }

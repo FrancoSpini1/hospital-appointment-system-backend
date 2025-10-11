@@ -35,6 +35,11 @@ public class PacienteController {
     public List<Turno> getTurnos(@PathVariable Long id){
         return  ts.getTurnosByIdPaciente(id);
     }
+
+    @GetMapping("verMisTurnosPorNombreDeMedico")
+    public List<Turno> getTurnosDeMedicoNombre(@RequestParam String nombre,@RequestParam Long id){
+        return ts.getTurnosDeXMedicoByIdPaciente(nombre,id);
+    }
 /*logica de endpoint "verMisTurnos"
 * la idea es que cuando el front este consumiendo el endpoint, se le pase la id de los que
 * seria el paciente que esta con "sesion abierta".
@@ -48,28 +53,9 @@ public class PacienteController {
     }
 
     /*
-    problema!!
-    por algun motivo que no se (de momento) solo puedo sacar un unico turno,
-    va corte cuando estoy en postman, solo puedo sacar un unico turno, no puedo tener varios
-    y eso es medio choto. ¿estara relacionado con los @OneToOne de paciente y medico de clase turno?
-
-     el dilema es el siguiente: un paciente puede tener muchos turnos, pero un turno
-     solo tiene un unico paciente, lo mismo pasa con el medico, por eso puse one to one en los
-     campos paciente y medico de clase turno, ¿seria mejor poner @ManyToOne en los campos paciente y medico?
-    ¿eso solucionaria lo de que un paciente pueda tener varios turnos, pero que ese turno tenga solo
-    un unico paciente y un unico medico?
-     */
-
-
-
-    /*
     logica endpoint POST "sacarTurno":
     el objeto 'nt' tiene dentro la id del paciente (no se si iria mejor un DTO en este caso).
     se guarda en la base de datos y despues en la tabla TURNOS-PACIENTES deberian aparecer las keys
-     */
-
-    /*
-    ---> VER PORQUE LOS PACIENTES NO TIENEN LOS TURNOS EN CAMPO 'turnos' <----
      */
 
     @DeleteMapping("borrarTurno/{idTurno}")

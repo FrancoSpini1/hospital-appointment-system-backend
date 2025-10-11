@@ -11,4 +11,6 @@ public interface MedicoService {
     public void postMedico(Medico nm);
     public void updateMedico(Long id,Medico nm);
     public void deleteMedicoById(Long id);
+
+    List<Medico> getMedicosPorNombre(String nombre);
 }
