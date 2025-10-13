@@ -15,6 +15,9 @@ public class Paciente {
     private Long numeroSocio;
     private String contraseña;
     private String nombreUsuario;
+//    @OneToOne(cascade = CascadeType.ALL)    //esto me lo paso el chatyipiti
+//    @JoinColumn(name= "idUsuario",referencedColumnName = "id")
+//    private Usuario usuario;
     private String nombreCompleto;
     private Long DNI;
     private String nombreObraSocial;
