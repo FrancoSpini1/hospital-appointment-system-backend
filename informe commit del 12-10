@@ -1,0 +1,6 @@
+agregue authcontroller authservice con metodo login
+aguegue un dto loginRequest con 2 campos usuario y contraseña
+agregue clase usuario que contiene usuario contraseña rol e id
+tuve problemas para integrar esto (comenté todo y lo deje como estaba XD)
+
+necesito ayuda URGENTE 
