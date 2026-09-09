@@ -6,3 +6,4 @@ INSERT INTO medicos (id,nombre_completo,matricula,especialidad) VALUES (2,'Horac
 INSERT INTO medicos (id,nombre_completo,matricula,especialidad) VALUES (3,'Carla Fildkerchirc',44227,'odontologia');
 INSERT INTO turnos (id,fecha_turno,hora_turno,id_paciente,id_medico) VALUES (7,'2025-07-01','16:14:03',1,2);
 INSERT INTO turnos (id,fecha_turno,hora_turno,id_paciente,id_medico) VALUES (8,'2025-09-10','19:40:13',2,3);
+INSERT INTO turnos (id,fecha_turno,hora_turno,id_paciente,id_medico) VALUES (11,'2024-02-10','13:20:43',1,3);
